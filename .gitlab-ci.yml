@@ -1,13 +1,32 @@
-deploy:
+build:
     script:
         - cd frontend
         - npm set progress=false
         - npm prune --prod
         - npm install --prod
+        # - npm test
         - cd ../backend
-        - mvn --errors -B -U clean package -Pfinal-war
+        - mvn --errors -B -U clean verify -Pfinal-war
+    cache:
+        key: node_modules
+        paths:
+            - frontend/node_modules
+    except:
+        - master
+
+build-deploy:
+    script:
+        - cd frontend
+        - npm set progress=false
+        - npm prune --prod
+        - npm install --prod
+        # - npm test
+        - cd ../backend
+        - mvn --errors -B -U clean verify -Pfinal-war
         - cp target/backend.war /var/lib/tomcat8/webapps/ROOT.war
     cache:
         key: node_modules
         paths:
             - frontend/node_modules
+    only:
+        - master
