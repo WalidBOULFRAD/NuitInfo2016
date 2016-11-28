@@ -12,7 +12,7 @@ build:
         paths:
             - frontend/node_modules
     except:
-        - master
+        - master@tbmb/NuitInfo2016
 
 build-deploy:
     script:
@@ -29,4 +29,4 @@ build-deploy:
         paths:
             - frontend/node_modules
     only:
-        - master
+        - master@tbmb/NuitInfo2016
