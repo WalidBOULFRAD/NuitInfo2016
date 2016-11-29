@@ -2,8 +2,9 @@ build:
     script:
         - cd frontend
         - npm set progress=false
-        - npm prune --prod
-        - npm install --prod
+        - yarn
+        - npm run prod
+        - cp -r lib/img dist/lib
         # - npm test
         - cd ../backend
         - mvn --errors -B -U clean verify -Pfinal-war
@@ -18,8 +19,9 @@ build-deploy:
     script:
         - cd frontend
         - npm set progress=false
-        - npm prune --prod
-        - npm install --prod
+        - yarn
+        - npm run prod
+        - cp -r lib/img dist/lib
         # - npm test
         - cd ../backend
         - mvn --errors -B -U clean verify -Pfinal-war

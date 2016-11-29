@@ -1,0 +1,46 @@
+<header>
+	<nav class="navbar navbar-inverse navbar-static-top"  abm-component="" role="navigation">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" ng-click="$ctrl.navCollapsed = !$ctrl.navCollapsed">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" ui-sref="home">Brand</a>
+			</div>
+			<div class="collapse navbar-collapse" ng-class="!$ctrl.navCollapsed && 'in'">
+				<ul class="nav navbar-nav">
+					<li ui-sref-active="active">
+						<a ui-sref="home" ng-click="$ctrl.setNavCol(true)"><i class="mdi mdi-home mdi-lg"></i></a>
+					</li>
+					<li ui-sref-active="active" ng-click="$ctrl.setNavCol(true)">
+						<a  ui-sref="page1" ng-click="$ctrl.setNavCol(true)">Page 1</a>
+					</li>
+					<li ui-sref-active="active" ng-click="$ctrl.setNavCol(true)">
+						<a ui-sref="page2" ng-click="$ctrl.setNavCol(true)">Page 2</a>
+					</li>
+				</ul>
+			<lang></lang>
+			</div>
+		</div>
+	</nav>
+</header>
+
+<!-- CONTENT START -->
+<section id="content">
+	<div class="container">
+		<div class="row">
+			<!-- CONTENT -->
+			<div class="col-xs-12 col-sm-8 col-md-9">
+				<div ui-view="mainView" class="anim-in-out anim-slide-below-fade" data-anim-speed="300"></div>
+			</div>
+
+			<!-- RIGHT MENU -->
+			<div class="col-xs-12 col-sm-4 col-md-3 right-menu">
+				<div ui-view="rightMenuView"></div>
+			</div>
+		</div>
+	</div>
+</section>

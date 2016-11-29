@@ -1,0 +1,61 @@
+@import '../../scss/variables';
+
+.complete-block,
+.complete-block-no-header {
+	margin-bottom: 20px;
+	width: 100%;
+
+	.header {
+		height: 60px;
+		line-height: 60px;
+		text-align: center;
+	}
+
+	.header-text {
+		font-size: 18px;
+		font-weight: bold;
+		padding: 10px;
+		padding-left: 10px;
+		padding-right: 10px;
+		text-align: left;
+	}
+
+	.wrapper-header-img {
+		img {
+			width: 100%;
+		}
+	}
+
+	.wrapper-body {
+		border-bottom: 1px solid $color-black;
+		border-left: 1px solid $color-black;
+		border-right: 1px solid $color-black;
+		min-height: 160px;
+		padding-bottom: 10px;
+		padding-top: 10px;
+		width: 100%;
+
+		.body-title {
+			font-size: 19px;
+			margin-left: 10px;
+			margin-right: 10px;
+		}
+
+		.body-text {
+			margin: 10px;
+		}
+	}
+
+}
+
+.icon-head {
+	margin-top: 7px;
+}
+
+.complete-block-no-header {
+
+	.wrapper-body {
+		border: 1px solid $color-black;
+	}
+
+}

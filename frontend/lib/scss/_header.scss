@@ -1,0 +1,32 @@
+@import 'variables';
+
+header {
+	.navbar-collapse.collapse {
+		display: block;
+		max-height: 0;
+		overflow: hidden;
+		transition: max-height .3s ease;
+	}
+
+	.navbar-collapse.collapse.in {
+		max-height: 2000px;
+	}
+
+	.navbar {
+		border-radius: 0;
+
+		&.navbar-inverse {
+			.lang .selected {
+				color: $color-white;
+			}
+		}
+
+		.lang .selected {
+			color: $color-green;
+		}
+
+		li.active a {
+			color: $color-white;
+		}
+	}
+}

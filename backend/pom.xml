@@ -74,7 +74,7 @@
                                 <configuration>
                                     <target name="copy frontend dist to cockpit resources">
                                         <copy todir="${project.build.directory}/${project.artifactId}/">
-                                            <fileset dir="${project.basedir}/../frontend/"/>
+                                            <fileset dir="${project.basedir}/../frontend/dist/"/>
                                         </copy>
                                     </target>
                                 </configuration>
