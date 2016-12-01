@@ -41,6 +41,15 @@ export default function routes($stateProvider, $translateProvider, $compileProvi
 				component: 'rightMenu'
 			}
 		}
+	})
+
+	.state('createRessource', {
+		url: '/ressources/createRessource',
+			views: {
+				mainView: {
+					component: 'createRessource'
+				}
+			}
 	});
 
 	$urlRouterProvider.otherwise('/home');

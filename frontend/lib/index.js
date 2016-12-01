@@ -37,6 +37,7 @@ import LangComponent from 'components/lang/lang.component';
 import HomeComponent from 'components/home/home.component';
 import P1Component from 'components/page1/page1.component';
 import P2Component from 'components/page2/page2.component';
+import createRessource from 'components/ressources/createRessource.component';
 import RightMenuComponent from 'components/rightMenu/rightMenu.component';
 import CompleteBlock from 'components/completeBlock/completeBlock.component';
 import Routes from 'index.config';
@@ -64,6 +65,7 @@ angular.module(DEMOMODULE, [
 .component('home', HomeComponent)
 .component('page1', P1Component)
 .component('page2', P2Component)
+.component('createRessource', createRessource)
 .component('rightMenu', RightMenuComponent)
 .component('completeBlock', CompleteBlock);
 
