@@ -19,14 +19,11 @@ export default function routes($stateProvider, $translateProvider, $compileProvi
 		}
 	})
 
-	.state('page1', {
-		url: '/page1',
+	.state('about', {
+		url: '/about',
 		views: {
 			mainView: {
-				component: 'page1'
-			},
-			rightMenuView: {
-				component: 'rightMenu'
+				component: 'about'
 			}
 		}
 	})
@@ -45,11 +42,11 @@ export default function routes($stateProvider, $translateProvider, $compileProvi
 
 	.state('createRessource', {
 		url: '/ressources/createRessource',
-			views: {
-				mainView: {
-					component: 'createRessource'
-				}
+		views: {
+			mainView: {
+				component: 'createRessource'
 			}
+		}
 	});
 
 	$urlRouterProvider.otherwise('/home');
