@@ -11,4 +11,8 @@ public class Alimentaire extends Service {
 
     @Id
     private Long id;
+
+    private int quantity;
+
+    private boolean availability;
 }

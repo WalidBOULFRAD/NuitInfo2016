@@ -11,4 +11,6 @@ public class Hebergement extends Service {
 
     @Id
     private Long id;
+
+    private int placesAvailable;
 }
