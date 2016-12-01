@@ -7,7 +7,7 @@ import javax.persistence.Id;
  * Created by Paul.Faidherbe on 01/12/2016.
  */
 @Entity
-public class Event {
+public class Service {
 
     @Id
     private Long id;
