@@ -49,5 +49,6 @@ public abstract class POI {
     public void setServices(Collection<Service> services) {
         this.services = services;
     }
+
 }
 

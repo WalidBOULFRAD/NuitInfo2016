@@ -11,4 +11,8 @@ public class Association extends Actor {
 
     @Id
     private Long id;
+
+    private boolean valide;
+
+    private String siret;
 }

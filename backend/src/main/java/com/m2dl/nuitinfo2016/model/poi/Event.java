@@ -37,4 +37,6 @@ public class Event extends POI {
     public void setEndDate(Date endDate) {
         this.endDate = endDate;
     }
+
+
 }
