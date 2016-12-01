@@ -1,16 +1,26 @@
 package com.m2dl.nuitinfo2016.model.actor;
 
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotBlank;
+
+import javax.validation.constraints.NotNull;
+
 /**
  * Created by Paul.Faidherbe on 01/12/2016.
  */
 public abstract class Actor {
 
+    @NotNull
+    @NotBlank
     private String name;
 
+    @NotNull
+    @NotBlank
     private String address;
 
     private String phoneNumber;
 
+    @Email
     private String mail;
 
     public Actor() {
