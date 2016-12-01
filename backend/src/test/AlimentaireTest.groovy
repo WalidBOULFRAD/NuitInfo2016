@@ -47,7 +47,6 @@ class AlimentaireTest extends Specification {
         unDescriptif    | uneQuantity
         "nouriture"     | -5
         null            | 5
-        null            | null
         ""              | 5
 
     }
