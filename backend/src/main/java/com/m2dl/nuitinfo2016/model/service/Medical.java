@@ -11,4 +11,7 @@ public class Medical extends Service {
 
     @Id
     private Long id;
+
+    public Medical() {
+    }
 }

@@ -11,4 +11,7 @@ public class Administratif extends Service {
 
     @Id
     private Long id;
+
+    public Administratif() {
+    }
 }

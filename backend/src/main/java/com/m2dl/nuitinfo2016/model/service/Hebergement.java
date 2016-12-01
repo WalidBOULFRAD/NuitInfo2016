@@ -13,4 +13,15 @@ public class Hebergement extends Service {
     private Long id;
 
     private int placesAvailable;
+
+    public Hebergement() {
+    }
+
+    public int getPlacesAvailable() {
+        return placesAvailable;
+    }
+
+    public void setPlacesAvailable(int placesAvailable) {
+        this.placesAvailable = placesAvailable;
+    }
 }

@@ -15,4 +15,23 @@ public class Alimentaire extends Service {
     private int quantity;
 
     private boolean availability;
+
+    public Alimentaire() {
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    public boolean isAvailability() {
+        return availability;
+    }
+
+    public void setAvailability(boolean availability) {
+        this.availability = availability;
+    }
 }

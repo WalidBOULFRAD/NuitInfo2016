@@ -14,4 +14,24 @@ public class Fixe extends POI {
     private Long id;
 
     private Date startDate;
+
+    public Fixe() {
+
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Date getStartDate() {
+        return startDate;
+    }
+
+    public void setStartDate(Date startDate) {
+        this.startDate = startDate;
+    }
 }

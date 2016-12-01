@@ -11,4 +11,7 @@ public class Sanitaire extends Service {
 
     @Id
     private Long id;
+
+    public Sanitaire() {
+    }
 }

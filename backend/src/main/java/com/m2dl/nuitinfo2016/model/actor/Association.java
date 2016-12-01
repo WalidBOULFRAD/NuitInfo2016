@@ -15,4 +15,23 @@ public class Association extends Actor {
     private boolean valide;
 
     private String siret;
+
+    public Association() {
+    }
+
+    public boolean isValide() {
+        return valide;
+    }
+
+    public void setValide(boolean valide) {
+        this.valide = valide;
+    }
+
+    public String getSiret() {
+        return siret;
+    }
+
+    public void setSiret(String siret) {
+        this.siret = siret;
+    }
 }
