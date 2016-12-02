@@ -1,13 +1,11 @@
 import leaflet from 'leaflet';
 
 class MapController {
-	constructor() {
+
+	constructor($http, ResourceFixeService) {
 		'ngInject';
 		this.leaflet = leaflet;
-
-		var mymap = this.leaflet.map('map').setView([45.505, -0.09], 13);
-
-		this.leaflet.tileLayer('https://api.mapbox.com/styles/v1/mapbox/streets-v10/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidGJtYiIsImEiOiJjaXc3MHF0cDgwMDAwMnlvNnc2YzVyMnRxIn0.fC7ZJ6ZKBLDlFFNoC1We1w').addTo(mymap);
+		var self = this;
 
 		this.filters = [
 			{
@@ -47,6 +45,21 @@ class MapController {
 				name: 'wifi'
 			}
 		];
+
+		this.ResourceFixeService = ResourceFixeService;
+		this.ResourceFixeService.getResource().then(function (res) {
+			console.log(res);
+		});
+
+		$http.get('http://nominatim.openstreetmap.org/search/Toulouse?format=json&addressdetails=1&limit=1')
+		.then(function (response) {
+			console.log(response);
+			var mymap = self.leaflet.map('map').setView([response.data[0].lat, response.data[0].lon], 13);
+
+			self.leaflet.tileLayer('https://api.mapbox.com/styles/v1/mapbox/streets-v10/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidGJtYiIsImEiOiJjaXc3MHF0cDgwMDAwMnlvNnc2YzVyMnRxIn0.fC7ZJ6ZKBLDlFFNoC1We1w').addTo(mymap);
+		}, function (response) {
+			return response;
+		});
 	}
 
 	updateFilters(index) {
