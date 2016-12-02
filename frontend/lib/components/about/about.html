@@ -18,8 +18,10 @@
   <div class="travaillons">
     <div ng-controller="ListController">
       <span ng-repeat="name in names track by $index" >
-          <img src="../../img/{{name}}" width="30%"/>
+          <img src="../../img/{{name}}.jpg" width="30%"/>
+
       </span>
+
     </div>
   </div>
 
@@ -28,13 +30,16 @@
 </body>
 
 <script>
+
+
+
 (function(angular) {
   'use strict';
 angular.module('scopeExample', [])
   .controller('ListController', ['$scope', function($scope) {
-    $scope.names = ['Bille_THOMAS.jpg', 'CHEVALIER_valentin.jpg', 'CHAUMEL_clement.jpg', 'Abdelmoghite_KACIMI.jpg',
-                  'Alpha.jpg', 'marlon.jpg', 'RottanaLY.jpg', 'Walid.jpg',
-                'YANLIN.jpg', 'MACHU_kevin.jpg', 'Aoun_anass.jpg']
+    $scope.names = ['Bille_THOMAS', 'CHEVALIER_valentin', 'CHAUMEL_clement', 'Abdelmoghite_KACIMI',
+                  'Alpha', 'marlon', 'RottanaLY', 'Walid',
+                'YANLIN', 'MACHU_kevin', 'Aoun_anass']
   }]);
 })(window.angular);
 </script>
