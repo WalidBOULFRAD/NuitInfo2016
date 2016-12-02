@@ -28,6 +28,7 @@ import angularUiRouterAnimInOut from 'angular-ui-router-anim-in-out';
 
 import rx from 'rx-angular'; // eslint-disable-line no-unused-vars
 
+
 // Our modules
 import jsonfr from 'languages/fr'; // eslint-disable-line no-unused-vars
 import jsonen from 'languages/en'; // eslint-disable-line no-unused-vars
@@ -37,6 +38,7 @@ import LangComponent from 'components/lang/lang.component';
 import HomeComponent from 'components/home/home.component';
 import P1Component from 'components/page1/page1.component';
 import P2Component from 'components/page2/page2.component';
+import Map from 'components/map/map.component';
 import RightMenuComponent from 'components/rightMenu/rightMenu.component';
 import CompleteBlock from 'components/completeBlock/completeBlock.component';
 import Routes from 'index.config';
@@ -62,6 +64,7 @@ angular.module(DEMOMODULE, [
 .service('langServiceRx', LangService)
 .component('lang', LangComponent)
 .component('home', HomeComponent)
+.component('map', Map)
 .component('page1', P1Component)
 .component('page2', P2Component)
 .component('rightMenu', RightMenuComponent)

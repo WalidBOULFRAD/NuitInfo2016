@@ -19,6 +19,15 @@ export default function routes($stateProvider, $translateProvider, $compileProvi
 		}
 	})
 
+	.state('map', {
+		url: '/map',
+		views: {
+			mainView: {
+				component: 'map'
+			}
+		}
+	})
+
 	.state('page1', {
 		url: '/page1',
 		views: {
