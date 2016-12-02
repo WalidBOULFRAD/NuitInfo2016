@@ -1,7 +1,5 @@
 package com.m2dl.nuitinfo2016.rest;
 
-import com.m2dl.nuitinfo2016.model.actor.Actor;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -23,8 +21,8 @@ public class MyResource {
      *
      * @return String that will be returned as a text/plain response.
      */
-    @RequestMapping(value = "/test", method = RequestMethod.POST)
-    public String getIt(@RequestBody Actor actor) {
-        return "{\"test\":\"Got it! "+actor.getClass().getTypeName()+" \"}";
+    @RequestMapping(value = "/test", method = RequestMethod.GET)
+    public String getIt() {
+        return "{\"test\":\"Got it!\"}";
     }
 }

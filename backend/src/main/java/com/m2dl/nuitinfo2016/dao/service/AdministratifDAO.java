@@ -1,4 +1,4 @@
-package com.m2dl.nuitinfo2016.dao;
+package com.m2dl.nuitinfo2016.dao.service;
 
 import com.m2dl.nuitinfo2016.model.service.Administratif;
 import com.m2dl.nuitinfo2016.model.service.Service;
