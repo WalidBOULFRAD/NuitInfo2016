@@ -11,10 +11,6 @@ import javax.validation.constraints.Min;
  */
 @Entity
 public class Hebergement extends Service {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
     @Min(value = 0)
     private int placesAvailable;
 

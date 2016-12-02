@@ -11,10 +11,6 @@ import javax.persistence.Id;
 @Entity
 public class Sanitaire extends Service {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
-
     public Sanitaire() {
     }
 }

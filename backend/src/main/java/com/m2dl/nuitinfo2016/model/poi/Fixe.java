@@ -13,15 +13,8 @@ import java.util.Date;
 @Entity
 public class Fixe extends POI {
 
-    @Id @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
-
     @NotNull
     private Date startDate;
-
-    public Long getID() {
-        return id;
-    }
 
     public Date getStartDate() {
         return startDate;

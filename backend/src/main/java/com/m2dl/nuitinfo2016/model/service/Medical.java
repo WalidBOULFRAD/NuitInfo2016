@@ -11,10 +11,6 @@ import javax.persistence.Id;
 @Entity
 public class Medical extends Service {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
-
     public Medical() {
     }
 }

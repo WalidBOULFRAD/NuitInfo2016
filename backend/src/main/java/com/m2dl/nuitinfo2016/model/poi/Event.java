@@ -13,9 +13,6 @@ import java.util.Date;
 @Entity
 public class Event extends POI {
 
-    @Id @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
-
     @NotNull
     private Date startDate;
 

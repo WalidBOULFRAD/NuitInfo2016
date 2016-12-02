@@ -12,7 +12,11 @@ import java.util.Collection;
 /**
  * Created by Paul.Faidherbe on 01/12/2016.
  */
+@Entity
 public abstract class POI {
+
+    @Id @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
 
     @NotNull
     private String name;

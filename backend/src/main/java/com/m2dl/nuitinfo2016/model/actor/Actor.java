@@ -1,17 +1,28 @@
 package com.m2dl.nuitinfo2016.model.actor;
 
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.m2dl.nuitinfo2016.model.poi.POI;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotBlank;
 
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.List;
 
 /**
  * Created by Paul.Faidherbe on 01/12/2016.
  */
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type")
+@JsonSubTypes({ @JsonSubTypes.Type(value = Administration.class, name = "Administration"),
+        @JsonSubTypes.Type(value = Association.class, name = "Association"),
+        @JsonSubTypes.Type(value = Individual.class, name = "Individual")})
+@Entity
 public abstract class Actor {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
 
     @NotNull
     @NotBlank
