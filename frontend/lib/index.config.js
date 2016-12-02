@@ -19,6 +19,15 @@ export default function routes($stateProvider, $translateProvider, $compileProvi
 		}
 	})
 
+	.state('map', {
+		url: '/map',
+		views: {
+			mainView: {
+				component: 'map'
+			}
+		}
+	})
+
 	.state('page1', {
 		url: '/page1',
 		views: {
@@ -45,7 +54,7 @@ export default function routes($stateProvider, $translateProvider, $compileProvi
 
 	$urlRouterProvider.otherwise('/home');
 
-	let languages = ['en', 'fr'];
+	let languages = ['en', 'ar'];
 
 	// load languages from json files (when needed)
 	$translateProvider.useStaticFilesLoader({
@@ -56,10 +65,10 @@ export default function routes($stateProvider, $translateProvider, $compileProvi
 	// handle multiple locales for one language
 	$translateProvider.registerAvailableLanguageKeys(languages, {
 		'en_*': 'en',
-		'fr_*': 'fr'
+		'ar_*': 'ar'
 	});
 
 	// define sanitize strategy and prefered language
 	$translateProvider.useSanitizeValueStrategy('escape');
-	$translateProvider.determinePreferredLanguage();
+	$translateProvider.preferredLanguage('en');
 }
