@@ -25,6 +25,11 @@ public class Point {
     public Point() {
     }
 
+    public Point(Float lat, Float lon) {
+        this.lat = lat;
+        this.lon = lon;
+    }
+
     public Float getLat() {
         return lat;
     }

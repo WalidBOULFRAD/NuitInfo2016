@@ -1,12 +1,10 @@
 package com.m2dl.nuitinfo2016.model.poi;
 
 import com.m2dl.nuitinfo2016.model.actor.Actor;
-import com.m2dl.nuitinfo2016.model.service.Service;
 import com.m2dl.nuitinfo2016.util.Point;
 
 import javax.persistence.Entity;
 import javax.validation.constraints.NotNull;
-import java.util.Collection;
 import java.util.Date;
 
 /**
@@ -19,8 +17,8 @@ public class Fixe extends POI {
     private Date startDate;
 
 
-    public Fixe(String name, String description, String address, Collection<Service> services, Actor owner, Point location, Date startDate) {
-        super(name, description, address, services, owner, location);
+    public Fixe(String name, String description, String address, Actor owner, Point location, Date startDate) {
+        super(name, description, address, owner, location);
         this.startDate = startDate;
     }
 

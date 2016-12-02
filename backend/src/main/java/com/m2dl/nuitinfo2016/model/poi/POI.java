@@ -32,7 +32,7 @@ public abstract class POI {
     private String address;
 
     @OneToMany(mappedBy = "poi")
-    private Collection<Service> services = new ArrayList<Service>();
+    private Collection<Service> services;
 
     @NotNull
     @ManyToOne(fetch= FetchType.LAZY)
@@ -42,16 +42,17 @@ public abstract class POI {
     private Point location;
 
     public POI() {
-
+    this.services = new ArrayList<Service>();
     }
 
-    public POI(String name, String description, String address, Collection<Service> services, Actor owner, Point location) {
+    public POI(String name, String description, String address, Actor owner, Point location) {
         this.name = name;
         this.description = description;
         this.address = address;
         this.services = services;
         this.owner = owner;
         this.location = location;
+        this.services = new ArrayList<Service>();
     }
 
     public String getName() {
