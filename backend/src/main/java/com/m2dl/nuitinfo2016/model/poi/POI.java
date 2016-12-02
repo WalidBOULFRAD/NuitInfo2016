@@ -1,8 +1,8 @@
 package com.m2dl.nuitinfo2016.model.poi;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.m2dl.nuitinfo2016.model.actor.Actor;
 import com.m2dl.nuitinfo2016.model.service.Service;
-import com.m2dl.nuitinfo2016.util.Point;
 import org.hibernate.validator.constraints.NotBlank;
 
 import javax.persistence.*;
@@ -16,7 +16,8 @@ import java.util.Collection;
 @Entity
 public abstract class POI {
 
-    @Id @GeneratedValue(strategy = GenerationType.AUTO)
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     @NotNull
@@ -35,23 +36,27 @@ public abstract class POI {
     private Collection<Service> services;
 
     @NotNull
-    @ManyToOne(fetch= FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JsonIgnore
     private Actor owner;
 
-    @OneToOne
-    private Point location;
+    @NotNull
+    private Float lat;
+
+    @NotNull
+    private Float lon;
 
     public POI() {
-    this.services = new ArrayList<Service>();
+        this.services = new ArrayList<Service>();
     }
 
-    public POI(String name, String description, String address, Actor owner, Point location) {
+    public POI(String name, String description, String address, Actor owner, Float lat, Float lon) {
         this.name = name;
         this.description = description;
         this.address = address;
-        this.services = services;
         this.owner = owner;
-        this.location = location;
+        this.lat = lat;
+        this.lon = lon;
         this.services = new ArrayList<Service>();
     }
 
@@ -93,6 +98,22 @@ public abstract class POI {
 
     public void setOwner(Actor owner) {
         this.owner = owner;
+    }
+
+    public Float getLat() {
+        return lat;
+    }
+
+    public void setLat(Float lat) {
+        this.lat = lat;
+    }
+
+    public Float getLon() {
+        return lon;
+    }
+
+    public void setLon(Float lon) {
+        this.lon = lon;
     }
 }
 

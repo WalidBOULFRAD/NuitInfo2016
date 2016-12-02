@@ -20,6 +20,7 @@ public class BootStrap {
             initialisation.initAdministration();
             initialisation.initAssociation();
             initialisation.initIndividual();
+            initialisation.initPoi();
         } catch (RuntimeException e) {
             e.printStackTrace();
         }

@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
  * Created by walid on 02/12/2016.
  */
 @RestController
-@RequestMapping(value = "/administration")
+@RequestMapping(value = "/api/administration")
 public class AdministrationController {
 
     @Autowired

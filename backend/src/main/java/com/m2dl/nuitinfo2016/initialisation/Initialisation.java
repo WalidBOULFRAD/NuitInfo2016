@@ -3,11 +3,11 @@ package com.m2dl.nuitinfo2016.initialisation;
 import com.m2dl.nuitinfo2016.dao.actor.AdministrationDAO;
 import com.m2dl.nuitinfo2016.dao.actor.AssociationDAO;
 import com.m2dl.nuitinfo2016.dao.actor.IndividualDAO;
+import com.m2dl.nuitinfo2016.dao.poi.FixeDAO;
 import com.m2dl.nuitinfo2016.model.actor.Administration;
 import com.m2dl.nuitinfo2016.model.actor.Association;
 import com.m2dl.nuitinfo2016.model.actor.Individual;
 import com.m2dl.nuitinfo2016.model.poi.Fixe;
-import com.m2dl.nuitinfo2016.util.Point;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -25,6 +25,8 @@ public class Initialisation {
     private AssociationDAO associationDAO;
     @Autowired
     private IndividualDAO individualDAO;
+    @Autowired
+    private FixeDAO fixeDAO;
 
     private Administration caf;
     private Administration ofii;
@@ -70,8 +72,13 @@ public class Initialisation {
     }
 
     public void initPoi() {
-        cafFixe = new Fixe("CAF", "LA CAF", "Rue 1", caf, new Point(), new Date());
-        ofiiFixe = new Fixe("OFII", "LA OFII", "Rue 1", ofii, new Point(), new Date());
-        prefFixe = new Fixe("Pref", "Prefecture", "Rue 1", prefecture, new Point(), new Date());
+        //Point p1 = new Point(new Float(10.0f),new Float(10.0f);
+        cafFixe = new Fixe("CAF", "LA CAF", "Rue 1", caf, new Float(10.f), new Float(10.f), new Date());
+        //ofiiFixe = new Fixe("OFII", "LA OFII", "Rue 1", ofii, new Point(), new Date());
+        //prefFixe = new Fixe("Pref", "Prefecture", "Rue 1", prefecture, new Point(), new Date());
+        fixeDAO.save(cafFixe);
+        //fixeDAO.save(ofiiFixe);
+        //fixeDAO.save(prefFixe);
+        caf.getPois().add(cafFixe);
     }
 }

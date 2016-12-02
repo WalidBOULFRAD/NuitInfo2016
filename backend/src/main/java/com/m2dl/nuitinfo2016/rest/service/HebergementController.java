@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
  * Created by walid on 02/12/2016.
  */
 @RestController
-@RequestMapping (value = "hebergement")
+@RequestMapping (value = "/api/hebergement")
 public class HebergementController {
 
     @Autowired

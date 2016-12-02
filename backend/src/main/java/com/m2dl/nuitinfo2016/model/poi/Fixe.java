@@ -1,7 +1,6 @@
 package com.m2dl.nuitinfo2016.model.poi;
 
 import com.m2dl.nuitinfo2016.model.actor.Actor;
-import com.m2dl.nuitinfo2016.util.Point;
 
 import javax.persistence.Entity;
 import javax.validation.constraints.NotNull;
@@ -16,9 +15,12 @@ public class Fixe extends POI {
     @NotNull
     private Date startDate;
 
+    public Fixe() {
 
-    public Fixe(String name, String description, String address, Actor owner, Point location, Date startDate) {
-        super(name, description, address, owner, location);
+    }
+
+    public Fixe(String name, String description, String address, Actor owner, Float lat, Float lon, Date startDate) {
+        super(name, description, address, owner, lat, lon);
         this.startDate = startDate;
     }
 
