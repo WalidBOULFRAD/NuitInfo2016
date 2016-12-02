@@ -1,10 +1,12 @@
 import poiView from './poi.html';
 import './poi.scss';
+import poiController from './poi.controller.js';
 
 class poi {
 	static detailsComponent() {
 		return {
-			templateUrl: poiView
+			templateUrl: poiView,
+			controller: poiController
 		};
 	}
 }
