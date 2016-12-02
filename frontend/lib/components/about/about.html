@@ -1,3 +1,44 @@
-<div id="about">
+<style type="text/css">
+.travaillons{ width:80%; margin:0 auto;}
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+<body ng-app="scopeExample">
+<div >
+  <h1 align="center"><em>M[a-z]* 2 D[a-z]* L[a-z] (M2DL)</em></h1>
+  <img src="../../img/about_us.jpg" width="100%" />
+
+  <div class="travaillons">
+    <h1>Nous travaillons a la nuit de l'info</h1>
+    <P>BLALBALBA</P>
+  </div>
+
+
+  <div class="travaillons">
+    <div ng-controller="ListController">
+      <span ng-repeat="name in names track by $index" >
+          <img src="../../img/{{name}}" width="30%"/>
+      </span>
+    </div>
+  </div>
 
 </div>
+</body>
+
+<script>
+(function(angular) {
+  'use strict';
+angular.module('scopeExample', [])
+  .controller('ListController', ['$scope', '$rootScope', function($scope, $rootScope) {
+    $scope.names = ['Alpha.jpg', 'Alpha.jpg', 'Alpha.jpg', 'Alpha.jpg',
+                  'Alpha.jpg', 'Alpha.jpg', 'Alpha.jpg', 'Alpha.jpg',
+                'Alpha.jpg', 'Alpha.jpg', 'Alpha.jpg', 'Alpha.jpg'];
+    $rootScope.presents=[
+      'BLABLALBA','BLABLALBA','BLABLALBA','BLABLALBA',
+      'BLABLALBA','BLABLALBA','BLABLALBA','BLABLALBA',
+      'BLABLALBA','BLABLALBA','BLABLALBA','BLABLALBA',
+    ];
+  }]);
+})(window.angular);
+</script>
