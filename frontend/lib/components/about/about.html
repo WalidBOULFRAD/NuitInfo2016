@@ -23,6 +23,7 @@
     </div>
   </div>
 
+
 </div>
 </body>
 
@@ -30,15 +31,10 @@
 (function(angular) {
   'use strict';
 angular.module('scopeExample', [])
-  .controller('ListController', ['$scope', '$rootScope', function($scope, $rootScope) {
-    $scope.names = ['Alpha.jpg', 'Alpha.jpg', 'Alpha.jpg', 'Alpha.jpg',
-                  'Alpha.jpg', 'Alpha.jpg', 'Alpha.jpg', 'Alpha.jpg',
-                'Alpha.jpg', 'Alpha.jpg', 'Alpha.jpg', 'Alpha.jpg'];
-    $rootScope.presents=[
-      'BLABLALBA','BLABLALBA','BLABLALBA','BLABLALBA',
-      'BLABLALBA','BLABLALBA','BLABLALBA','BLABLALBA',
-      'BLABLALBA','BLABLALBA','BLABLALBA','BLABLALBA',
-    ];
+  .controller('ListController', ['$scope', function($scope) {
+    $scope.names = ['Bille_THOMAS.jpg', 'CHEVALIER_valentin.jpg', 'CHAUMEL_clement.jpg', 'Abdelmoghite_KACIMI.jpg',
+                  'Alpha.jpg', 'marlon.jpg', 'RottanaLY.jpg', 'Walid.jpg',
+                'YANLIN.jpg', 'MACHU_kevin.jpg', 'Aoun_anass.jpg']
   }]);
 })(window.angular);
 </script>
