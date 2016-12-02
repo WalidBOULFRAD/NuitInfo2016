@@ -1,4 +1,4 @@
-package groovy.com.m2dl.nuitinfo2016.service
+package groovy.com.m2dl.nuitinfo2016.model.service
 
 import com.m2dl.nuitinfo2016.model.service.Alimentaire
 
@@ -24,10 +24,10 @@ class AlimentaireTest extends Specification {
     @Unroll
     void "test la validite d'un service de type alimentaire #unDescriptif"(String unDescriptif, int uneQuantity) {
 
-        given: "initialisation d'un service alimentaire"
+        given: "initialisation d'un initialisation alimentaire"
         Alimentaire alimentaire = new Alimentaire(description: unDescriptif, quantity: uneQuantity)
 
-        expect: "le service est valide"
+        expect: "le initialisation est valide"
         validator.validate(alimentaire).empty
 
         where:
@@ -39,10 +39,10 @@ class AlimentaireTest extends Specification {
     @Unroll
     void "test l'invalidite d'un service de type alimentaire #unDescriptif"(String unDescriptif, int uneQuantity) {
 
-        given: "initialisation d'un service alimentaire"
+        given: "initialisation d'un initialisation alimentaire"
         Alimentaire alimentaire = new Alimentaire(description: unDescriptif, quantity: uneQuantity)
 
-        expect: "le service est valide"
+        expect: "le initialisation est valide"
         !validator.validate(alimentaire).empty
 
         where:

@@ -1,4 +1,4 @@
-package com.m2dl.nuitinfo2016.service;
+package com.m2dl.nuitinfo2016.initialisation;
 
 import org.springframework.stereotype.Service;
 

@@ -1,4 +1,4 @@
-package groovy.com.m2dl.nuitinfo2016.service
+package groovy.com.m2dl.nuitinfo2016.model.service
 
 import com.m2dl.nuitinfo2016.model.service.Hebergement
 
@@ -24,10 +24,10 @@ class HebergementTest extends Specification {
     @Unroll
     void "test la validite d'un service de type hebergement #unDescriptif"(String unDescriptif, int nbrPlaceAvailable) {
 
-        given: "initialisation d'un service alimentaire"
+        given: "initialisation d'un initialisation alimentaire"
         Hebergement hebergement = new Hebergement(description: unDescriptif, placesAvailable: nbrPlaceAvailable)
 
-        expect: "le service est valide"
+        expect: "le initialisation est valide"
         validator.validate(hebergement).empty
 
         where:
@@ -39,10 +39,10 @@ class HebergementTest extends Specification {
     @Unroll
     void "test l'invalidite d'un service de type hebergement #unDescriptif"(String unDescriptif, int nbrPlaceAvailable) {
 
-        given: "initialisation d'un service alimentaire"
+        given: "initialisation d'un initialisation alimentaire"
         Hebergement hebergement = new Hebergement(description: unDescriptif, placesAvailable: nbrPlaceAvailable)
 
-        expect: "le service est valide"
+        expect: "le initialisation est valide"
         !validator.validate(hebergement).empty
 
         where:

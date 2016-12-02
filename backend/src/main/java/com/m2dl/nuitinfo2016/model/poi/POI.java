@@ -3,6 +3,7 @@ package com.m2dl.nuitinfo2016.model.poi;
 import com.m2dl.nuitinfo2016.model.actor.Actor;
 import com.m2dl.nuitinfo2016.model.service.Service;
 import com.m2dl.nuitinfo2016.util.Point;
+import org.hibernate.validator.constraints.NotBlank;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -19,12 +20,15 @@ public abstract class POI {
     private Long id;
 
     @NotNull
+    @NotBlank
     private String name;
 
     @NotNull
+    @NotBlank
     private String description;
 
     @NotNull
+    @NotBlank
     private String address;
 
     @OneToMany(mappedBy = "poi")
