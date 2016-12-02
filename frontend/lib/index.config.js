@@ -28,6 +28,15 @@ export default function routes($stateProvider, $translateProvider, $compileProvi
 		}
 	})
 
+	.state('about', {
+		url: '/about',
+		views: {
+			mainView: {
+				component: 'about'
+			}
+		}
+	})
+
 	.state('page1', {
 		url: '/page1',
 		views: {

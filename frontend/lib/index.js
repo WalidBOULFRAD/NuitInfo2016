@@ -39,6 +39,7 @@ import HomeComponent from 'components/home/home.component';
 import P1Component from 'components/page1/page1.component';
 import P2Component from 'components/page2/page2.component';
 import Map from 'components/map/map.component';
+import About from 'components/about/about.component';
 import RightMenuComponent from 'components/rightMenu/rightMenu.component';
 import CompleteBlock from 'components/completeBlock/completeBlock.component';
 import Routes from 'index.config';
@@ -67,6 +68,7 @@ angular.module(DEMOMODULE, [
 .component('lang', LangComponent)
 .component('home', HomeComponent)
 .component('map', Map)
+.component('about', About)
 .component('page1', P1Component)
 .component('page2', P2Component)
 .component('rightMenu', RightMenuComponent)
