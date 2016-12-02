@@ -73,7 +73,8 @@ public class Initialisation {
 
     public void initPoi() {
         //Point p1 = new Point(new Float(10.0f),new Float(10.0f);
-        cafFixe = new Fixe("CAF", "LA CAF", "Rue 1", caf, new Float(10.f), new Float(10.f), new Date());
+        cafFixe = new Fixe("CAF", "LA CAF", "Rue 1", caf, new Float(43.6f), new Float(1.44f), new Date());
+        cafFixe = new Fixe("CAF", "LA CAF", "Rue 1", caf, new Float(42.6f), new Float(1.34f), new Date());
         //ofiiFixe = new Fixe("OFII", "LA OFII", "Rue 1", ofii, new Point(), new Date());
         //prefFixe = new Fixe("Pref", "Prefecture", "Rue 1", prefecture, new Point(), new Date());
         fixeDAO.save(cafFixe);

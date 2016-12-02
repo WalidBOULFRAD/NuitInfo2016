@@ -60,11 +60,11 @@ var cf = {
 		hot: true,
 		open: true,
 		noInfo: true,
-    proxy: {
-      '/webapi': {
-        target: 'http://localhost:8080'
-      }
-    }
+		proxy: {
+			'/api': {
+				target: 'http://localhost:8080'
+			}
+		}
 	},
 
 	plugins: [

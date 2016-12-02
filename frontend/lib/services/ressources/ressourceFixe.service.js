@@ -4,10 +4,8 @@ class RessourceFixeService {
 		this.$http = $http;
 	}
 
-
-
 	getResource() {
-		return this.$http.get('/poi/findAll')
+		return this.$http.get('/api/POI/findAll')
 			.then(function successCallback(response) {
 					return response;
 			}, function errorCallback(response) {
