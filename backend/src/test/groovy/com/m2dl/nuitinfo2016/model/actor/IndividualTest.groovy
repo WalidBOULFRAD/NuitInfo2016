@@ -3,6 +3,7 @@ package com.m2dl.nuitinfo2016.model.actor
 import spock.lang.Specification
 import spock.lang.Unroll
 
+import javax.validation.Validation
 import javax.validation.Validator
 import javax.validation.ValidatorFactory
 
@@ -22,14 +23,14 @@ class IndividualTest extends Specification {
     void "test la validite d'un individual"(String unName, String uneAddress,
                             String unPhoneNumber, String unMail) {
 
-        given: "un individual initialise avec un name, address, phoneNumber, mail et icon qui sont non vide"
+        given: "un individual initialise correctement"
         Individual individual = new Individual(name: unName, address: uneAddress, phoneNumber: unPhoneNumber,
                 mail: unMail)
 
         expect: "l'individual est valide"
         validator.validate(individual).empty
 
-        where:                   "0613436545"
+        where:
         unName     | uneAddress | unPhoneNumber   | unMail
         "un nom 1" | "uneaddress" | "0614129810"  | "ml@ml.com"
     }
@@ -43,7 +44,7 @@ class IndividualTest extends Specification {
                 mail: unMail)
 
         expect: "l'individual est invalide"
-        !validator.validate(activite).empty
+        !validator.validate(individual).empty
 
         where:
         unName  | uneAddress  | unPhoneNumber   | unMail
@@ -61,6 +62,5 @@ class IndividualTest extends Specification {
         "un name 1" | "une address" | "0537981539" | "ml.com"
 
     }
-
 }
 
