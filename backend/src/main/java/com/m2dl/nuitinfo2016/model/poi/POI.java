@@ -1,7 +1,10 @@
 package com.m2dl.nuitinfo2016.model.poi;
 
+import com.m2dl.nuitinfo2016.model.actor.Actor;
 import com.m2dl.nuitinfo2016.model.service.Service;
+import com.m2dl.nuitinfo2016.util.Point;
 
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -13,10 +16,22 @@ public abstract class POI {
 
     @NotNull
     private String name;
+
+    @NotNull
     private String description;
+
+    @NotNull
     private String address;
 
+    @OneToMany(mappedBy = "poi")
     private Collection<Service> services = new ArrayList<Service>();
+
+    @NotNull
+    @ManyToOne(fetch= FetchType.LAZY)
+    private Actor owner;
+
+    @OneToOne
+    private Point location;
 
     public String getName() {
         return name;

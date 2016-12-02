@@ -1,7 +1,10 @@
 package com.m2dl.nuitinfo2016.model.service;
 
+import com.m2dl.nuitinfo2016.model.poi.POI;
 import org.hibernate.validator.constraints.NotBlank;
 
+import javax.persistence.FetchType;
+import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
 
 /**
@@ -10,4 +13,16 @@ import javax.validation.constraints.NotNull;
 public abstract class Service {
     @NotNull @NotBlank
     protected String description;
+
+    @NotNull
+    @ManyToOne(fetch= FetchType.LAZY)
+    private POI poi;
+
+    public POI getPoi() {
+        return poi;
+    }
+
+    public void setPoi(POI poi) {
+        this.poi = poi;
+    }
 }
