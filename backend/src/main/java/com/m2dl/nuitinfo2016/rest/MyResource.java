@@ -1,4 +1,8 @@
-package com.m2dl.nuitinfo2016.service.rest;
+package com.m2dl.nuitinfo2016.rest;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -6,9 +10,9 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 /**
- * Root resource (exposed at "test" path)
+ * Root actor
  */
-@Path("test")
+@RestController
 public class MyResource {
 
     /**
@@ -17,8 +21,7 @@ public class MyResource {
      *
      * @return String that will be returned as a text/plain response.
      */
-    @GET
-    @Produces(MediaType.APPLICATION_JSON)
+    @RequestMapping(value = "/test", method = RequestMethod.GET)
     public String getIt() {
         return "{\"test\":\"Got it!\"}";
     }
