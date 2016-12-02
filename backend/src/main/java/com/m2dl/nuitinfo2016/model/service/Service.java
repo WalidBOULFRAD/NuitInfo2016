@@ -1,6 +1,7 @@
 package com.m2dl.nuitinfo2016.model.service;
 
 import com.m2dl.nuitinfo2016.model.poi.POI;
+import org.hibernate.validator.constraints.NotBlank;
 
 import javax.persistence.FetchType;
 import javax.persistence.ManyToOne;
