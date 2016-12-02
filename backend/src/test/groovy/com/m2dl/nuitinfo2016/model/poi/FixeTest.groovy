@@ -25,11 +25,11 @@ class FixeTest extends Specification {
     void "test la validite d'un poi fixe"(String unName, String uneDescription, String uneAddress,
                                           Actor unOwner, Date uneDate) {
 
-        given: "un individual initialise correctement"
+        given: "d'un poi fixe initialise correctement"
         Fixe fixe = new Fixe(name: unName, description: uneDescription, address: uneAddress,
                 owner: unOwner, startDate: uneDate)
 
-        expect: "l'individual est valide"
+        expect: "le poi est valide"
         validator.validate(fixe).empty
 
         where:
