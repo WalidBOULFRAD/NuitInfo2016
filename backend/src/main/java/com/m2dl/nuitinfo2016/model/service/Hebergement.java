@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.Min;
 
 /**
  * Created by Paul.Faidherbe on 01/12/2016.
@@ -14,7 +15,7 @@ public class Hebergement extends Service {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-
+    @Min(value = 0)
     private int placesAvailable;
 
     public Hebergement() {

@@ -10,6 +10,8 @@ import javax.validation.constraints.NotNull;
  * Created by Paul.Faidherbe on 01/12/2016.
  */
 public abstract class Service {
+    @NotNull @NotBlank
+    protected String description;
 
     @NotNull
     @ManyToOne(fetch= FetchType.LAZY)

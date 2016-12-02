@@ -14,7 +14,7 @@ public class Alimentaire extends Service {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-
+    @NotNull @Min(value = 0)
     private int quantity;
 
     private boolean availability;

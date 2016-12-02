@@ -1,3 +1,4 @@
+package com.m2dl.nuitinfo2016.model.service
 /**
  * Created by Moghite on 02/12/2016.
  */
@@ -24,7 +25,7 @@ class HebergementTest extends Specification {
     void "test la validite d'un service de type hebergement #unDescriptif"(String unDescriptif, int nbrPlaceAvailable) {
 
         given: "initialisation d'un service alimentaire"
-        Hebergement hebergement = new Hebergement(description: unDescriptif, placeAvailable: nbrPlaceAvailable)
+        Hebergement hebergement = new Hebergement(description: unDescriptif, placesAvailable: nbrPlaceAvailable)
 
         expect: "le service est valide"
         validator.validate(hebergement).empty
@@ -39,16 +40,15 @@ class HebergementTest extends Specification {
     void "test l'invalidite d'un service de type hebergement #unDescriptif"(String unDescriptif, int nbrPlaceAvailable) {
 
         given: "initialisation d'un service alimentaire"
-        Alimentaire alimentaire = new Alimentaire(description: unDescriptif, placeAvailable: nbrPlaceAvailable)
+        Hebergement hebergement = new Hebergement(description: unDescriptif, placesAvailable: nbrPlaceAvailable)
 
         expect: "le service est valide"
-        !validator.validate(alimentaire).empty
+        !validator.validate(hebergement).empty
 
         where:
         unDescriptif    | nbrPlaceAvailable
         "chambre"       | -5
         null            | 5
-        null            | null
         ""              | 5
 
     }
