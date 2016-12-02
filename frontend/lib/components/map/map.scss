@@ -1,5 +1,56 @@
 @import '../../scss/variables';
 
+
+.filters {
+	text-align: center;
+	margin: 4 * $small-margin 0;
+
+	.filter {
+		display: inline-block;
+		margin: 0 $small-margin;
+		cursor: pointer;
+		position: relative;
+
+		&.selected {
+			color: $color-green;
+		}
+
+		.tooltiptext {
+			visibility: hidden;
+			padding: $small-margin / 2 $small-margin;
+			background-color: #555;
+			color: #fff;
+			text-align: center;
+			border-radius: 6px;
+			z-index: 100;
+			position: absolute;
+			top: 135%;
+			left: 50%;
+			transform: translateX(-50%);
+			opacity: 0;
+			transition: opacity 1s;
+			text-transform: capitalize;
+		}
+
+		.tooltiptext::after {
+			content: '';
+			position: absolute;
+			bottom: 100%;
+			left: 50%;
+			margin-left: -5px;
+			border-width: 5px;
+			border-style: solid;
+			border-color: transparent transparent #555 transparent;
+		}
+
+		&:hover .tooltiptext {
+			visibility: visible;
+			opacity: 1;
+		}
+	}
+}
+
 #map {
-		height: 1vh;
+	height: 80vh;
+	width: 100%;
 }
