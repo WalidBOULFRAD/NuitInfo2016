@@ -1,2 +1,23 @@
 <div id="displayRessource">
+	<div class="media">
+		<div class="media-body">
+			<h1 class="media-heading">{{$ctrl.name}}</h1>
+			<div> Description : {{$ctrl.description}} </div>
+			<div> Adress : {{$ctrl.adress}} </div>
+			<div class="list-group">
+				<h3> Services : </h3>
+				<div ng-repeat="service in $ctrl.service" class="list-group-item">
+				<h4>{{service.description}}</h4>
+				<div ng-if="service.quantity != null && service.quantity.length != 0">
+					Quantity : {{service.quantity}}
+				</div>
+				<div ng-if="service.avaibility != null && service.avaibility == true">
+					Available
+				</div>
+				<div ng-if="service.placeAvailable != null && service.placeAvailable.length != 0">
+					Place : {{service.placeAvailable}}
+				</div>
+			</div>
+		</div>
+	</div>
 </div>

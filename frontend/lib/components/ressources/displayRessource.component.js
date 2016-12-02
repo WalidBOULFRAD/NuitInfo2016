@@ -1,10 +1,12 @@
 import DisplayRessourceView from './displayRessource.html';
+import DisplayRessourceController from './displayRessource.controller.js';
 import './displayRessource.scss';
 
 class DisplayRessource {
 	static detailsComponent() {
 		return {
-			templateUrl: DisplayRessourceView
+			templateUrl: DisplayRessourceView,
+			controller: DisplayRessourceController
 		};
 	}
 }
