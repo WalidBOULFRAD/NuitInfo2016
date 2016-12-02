@@ -2,9 +2,6 @@ package com.m2dl.nuitinfo2016.model.service
 /**
  * Created by Moghite on 02/12/2016.
  */
-
-import com.m2dl.nuitinfo2016.model.service.Alimentaire
-import com.m2dl.nuitinfo2016.model.service.Hebergement
 import spock.lang.Specification
 import spock.lang.Unroll
 
@@ -31,8 +28,8 @@ class HebergementTest extends Specification {
         validator.validate(hebergement).empty
 
         where:
-        unDescriptif    | nbrPlaceAvailable
-        "chambre"       | 1
+        unDescriptif | nbrPlaceAvailable
+        "chambre"    | 1
 
     }
 
@@ -46,10 +43,10 @@ class HebergementTest extends Specification {
         !validator.validate(hebergement).empty
 
         where:
-        unDescriptif    | nbrPlaceAvailable
-        "chambre"       | -5
-        null            | 5
-        ""              | 5
+        unDescriptif | nbrPlaceAvailable
+        "chambre"    | -5
+        null         | 5
+        ""           | 5
 
     }
 }

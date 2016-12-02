@@ -21,7 +21,7 @@ class IndividualTest extends Specification {
 
     @Unroll
     void "test la validite d'un individual"(String unName, String uneAddress,
-                            String unPhoneNumber, String unMail) {
+                                            String unPhoneNumber, String unMail) {
 
         given: "un individual initialise correctement"
         Individual individual = new Individual(name: unName, address: uneAddress, phoneNumber: unPhoneNumber,
@@ -31,13 +31,13 @@ class IndividualTest extends Specification {
         validator.validate(individual).empty
 
         where:
-        unName     | uneAddress | unPhoneNumber   | unMail
+        unName     | uneAddress   | unPhoneNumber | unMail
         "un nom 1" | "uneaddress" | "0614129810"  | "ml@ml.com"
     }
 
     @Unroll
     void "test l'invalidite d'un individual non valide"(String unName, String uneAddress,
-                            String unPhoneNumber, String unMail) {
+                                                        String unPhoneNumber, String unMail) {
 
         given: "un individual initialise de maniere non valide"
         Individual individual = new Individual(name: unName, address: uneAddress, phoneNumber: unPhoneNumber,
@@ -47,19 +47,18 @@ class IndividualTest extends Specification {
         !validator.validate(individual).empty
 
         where:
-        unName  | uneAddress  | unPhoneNumber   | unMail
-        null    | null        | null            | null
-        null    | null        | null            | null
-        null    | null        | null            | "ml@ml.com"
-        null    | null        | "0537981539"    | "ml@ml.com"
-        null    | "uneaddress" | "0537981539"   | "ml@ml.com"
-        ""      | ""          | ""              | ""
-        ""      | ""          | ""              | ""
-        ""      | ""          | ""              | "ml@ml.com"
-        ""      | ""          | "0537981539"    | "ml@ml.com"
-        ""      | "uneaddress" | "0537981539"   | "ml@ml.com"
-        "un name 1" | "une address" | "0537981539" | "ml"
-        "un name 1" | "une address" | "0537981539" | "ml.com"
+        unName      | uneAddress    | unPhoneNumber | unMail
+        null        | null          | null          | null
+        null        | null          | null          | "ml@ml.com"
+        null        | null          | "0537981539"  | "ml@ml.com"
+        null        | "uneaddress"  | "0537981539"  | "ml@ml.com"
+        ""          | ""            | ""            | ""
+        ""          | ""            | ""            | ""
+        ""          | ""            | ""            | "ml@ml.com"
+        ""          | ""            | "0537981539"  | "ml@ml.com"
+        ""          | "uneaddress"  | "0537981539"  | "ml@ml.com"
+        "un name 1" | "une address" | "0537981539"  | "ml"
+        "un name 1" | "une address" | "0537981539"  | "ml.com"
 
     }
 }

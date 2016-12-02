@@ -2,8 +2,6 @@ package com.m2dl.nuitinfo2016.model.service
 /**
  * Created by Moghite on 01/12/2016.
  */
-
-import com.m2dl.nuitinfo2016.model.service.Alimentaire
 import spock.lang.Specification
 import spock.lang.Unroll
 
@@ -30,8 +28,8 @@ class AlimentaireTest extends Specification {
         validator.validate(alimentaire).empty
 
         where:
-        unDescriptif    | uneQuantity
-        "nouriture"     | 1
+        unDescriptif | uneQuantity
+        "nouriture"  | 1
 
     }
 
@@ -45,10 +43,10 @@ class AlimentaireTest extends Specification {
         !validator.validate(alimentaire).empty
 
         where:
-        unDescriptif    | uneQuantity
-        "nouriture"     | -5
-        null            | 5
-        ""              | 5
+        unDescriptif | uneQuantity
+        "nouriture"  | -5
+        null         | 5
+        ""           | 5
 
     }
 }

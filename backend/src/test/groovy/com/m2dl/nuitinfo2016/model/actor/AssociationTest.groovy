@@ -32,9 +32,9 @@ class AssociationTest extends Specification {
         validator.validate(association).empty
 
         where:
-        unName     | uneAddress | unPhoneNumber   | unMail      | unValide  | unSiret
-        "un nom 1" | "uneaddress" | "0614129810"  | "ml@ml.com" | true      | "101061648941313274"
-        "un nom 2" | "uneaddress" | "0124646589"  | "ml@ml.com" | false     | "101061648941313274"
+        unName     | uneAddress   | unPhoneNumber | unMail      | unValide | unSiret
+        "un nom 1" | "uneaddress" | "0614129810"  | "ml@ml.com" | true     | "101061648941313274"
+        "un nom 2" | "uneaddress" | "0124646589"  | "ml@ml.com" | false    | "101061648941313274"
     }
 
     @Unroll
@@ -49,20 +49,20 @@ class AssociationTest extends Specification {
         !validator.validate(association).empty
 
         where:
-        unName  | uneAddress  | unPhoneNumber   | unMail      | unValide  | unSiret
-        null    | null        | null            | null        | null      | null
-        null    | null        | null            | null        | null      | "12132023060"
-        null    | null        | null            | null        | true      | "12132023060"
-        null    | null        | null            | "ml@ml.com" | true      | "12132023060"
-        null    | null        | "0537981539"    | "ml@ml.com" | true      | "12132023060"
-        null    | "uneaddress" | "0537981539"   | "ml@ml.com" | true      | "12132023060"
-        ""      | ""          | ""              | ""          | true      | ""
-        ""      | ""          | ""              | ""          | true      | "12132023060"
-        ""      | ""          | ""              | "ml@ml.com" | true      | "12132023060"
-        ""      | ""          | "0537981539"    | "ml@ml.com" | true      | "12132023060"
-        ""      | "uneaddress" | "0537981539"   | "ml@ml.com" | true      | "12132023060"
-        "un name 1" | "une address" | "0537981539" | "ml"     | true      | "12132023060"
-        "un name 1" | "une address" | "0537981539" | "ml.com" | true      | "12132023060"
+        unName      | uneAddress    | unPhoneNumber | unMail      | unValide | unSiret
+        null        | null          | null          | null        | null     | null
+        null        | null          | null          | null        | null     | "12132023060"
+        null        | null          | null          | null        | true     | "12132023060"
+        null        | null          | null          | "ml@ml.com" | true     | "12132023060"
+        null        | null          | "0537981539"  | "ml@ml.com" | true     | "12132023060"
+        null        | "uneaddress"  | "0537981539"  | "ml@ml.com" | true     | "12132023060"
+        ""          | ""            | ""            | ""          | true     | ""
+        ""          | ""            | ""            | ""          | true     | "12132023060"
+        ""          | ""            | ""            | "ml@ml.com" | true     | "12132023060"
+        ""          | ""            | "0537981539"  | "ml@ml.com" | true     | "12132023060"
+        ""          | "uneaddress"  | "0537981539"  | "ml@ml.com" | true     | "12132023060"
+        "un name 1" | "une address" | "0537981539"  | "ml"        | true     | "12132023060"
+        "un name 1" | "une address" | "0537981539"  | "ml.com"    | true     | "12132023060"
 
     }
 }
