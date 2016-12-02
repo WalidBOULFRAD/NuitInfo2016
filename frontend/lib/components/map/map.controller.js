@@ -46,6 +46,10 @@ class MapController {
 			}
 		];
 
+		// var greenIcon = this.leaflet.icon({
+	  //   iconUrl: 'pin.png'
+		// });
+
 		this.ResourceFixeService = ResourceFixeService;
 		this.ResourceFixeService.getResource().then(function (res) {
 			console.log(res);
