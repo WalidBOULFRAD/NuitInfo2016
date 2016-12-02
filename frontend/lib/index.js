@@ -43,6 +43,8 @@ import RightMenuComponent from 'components/rightMenu/rightMenu.component';
 import CompleteBlock from 'components/completeBlock/completeBlock.component';
 import Routes from 'index.config';
 
+
+import ResourceFixeService from 'services/ressources/ressourceFixe.service';
 // Import images
 
 const DEMOMODULE = 'demo';
@@ -68,6 +70,7 @@ angular.module(DEMOMODULE, [
 .component('page1', P1Component)
 .component('page2', P2Component)
 .component('rightMenu', RightMenuComponent)
-.component('completeBlock', CompleteBlock);
+.component('completeBlock', CompleteBlock)
+.service('ResourceFixeService', ResourceFixeService);
 
 export default DEMOMODULE;
