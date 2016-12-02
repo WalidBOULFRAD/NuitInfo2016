@@ -43,13 +43,13 @@ export default function routes($stateProvider, $translateProvider, $compileProvi
 		}
 	})
 
-	.state('createRessource', {
-		url: '/ressources/createRessource',
-			views: {
-				mainView: {
-					component: 'createRessource'
-				}
+	.state('poi', {
+		url: '/poi/poi',
+		views: {
+			mainView: {
+				component: 'poi'
 			}
+		}
 	});
 
 	$urlRouterProvider.otherwise('/home');
