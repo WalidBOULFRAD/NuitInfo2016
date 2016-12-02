@@ -10,7 +10,8 @@ import org.springframework.web.bind.annotation.RestController;
 /**
  * Created by walid on 01/12/2016.
  */
-@RestController (value = "/actor")
+@RestController
+@RequestMapping(value = "/actor")
 public class ActorController {
 
     @Autowired

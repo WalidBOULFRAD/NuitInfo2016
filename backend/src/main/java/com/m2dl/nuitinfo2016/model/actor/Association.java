@@ -4,9 +4,6 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import org.hibernate.validator.constraints.NotBlank;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 
 /**
@@ -23,6 +20,12 @@ public class Association extends Actor {
     private String siret;
 
     public Association() {
+    }
+
+    public Association(String name, String address, String phoneNumber, String mail, boolean valide, String siret) {
+        super(name, address, phoneNumber, mail);
+        this.valide = valide;
+        this.siret = siret;
     }
 
     public boolean isValide() {

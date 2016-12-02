@@ -8,6 +8,7 @@ import spock.lang.Unroll
 import javax.validation.Validation
 import javax.validation.Validator
 import javax.validation.ValidatorFactory
+
 /**
  * Created by A.Anass on 02/12/2016.
  */
@@ -22,7 +23,7 @@ class EventTest extends Specification {
 
     @Unroll
     void "test la validite d'un poi event "(String unName, String uneDescription, String uneAddress,
-                                          Actor unOwner, Date uneStartDate, Date uneEndDate) {
+                                            Actor unOwner, Date uneStartDate, Date uneEndDate) {
 
         given: "d'un poi event initialise correctement"
         Event event = new Event(name: unName, description: uneDescription, address: uneAddress,
@@ -38,7 +39,7 @@ class EventTest extends Specification {
 
     @Unroll
     void "test l'invalidite d'un poi event non valide"(String unName, String uneDescription, String uneAddress,
-                                                      Actor unOwner, Date uneStartDate, Date uneEndDate) {
+                                                       Actor unOwner, Date uneStartDate, Date uneEndDate) {
 
         given: "un poi event initialise de maniere non valide"
         Event event = new Event(name: unName, description: uneDescription, address: uneAddress,

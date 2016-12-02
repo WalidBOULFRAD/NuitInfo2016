@@ -10,7 +10,8 @@ import org.springframework.web.bind.annotation.RestController;
 /**
  * Created by walid on 02/12/2016.
  */
-@RestController(value = "/administration")
+@RestController
+@RequestMapping(value = "/administration")
 public class AdministrationController {
 
     @Autowired

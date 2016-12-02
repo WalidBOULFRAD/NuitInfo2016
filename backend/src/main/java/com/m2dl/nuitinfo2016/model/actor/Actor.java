@@ -8,6 +8,7 @@ import org.hibernate.validator.constraints.NotBlank;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -41,6 +42,14 @@ public abstract class Actor {
     private List<POI> pois;
 
     public Actor() {
+    }
+
+    public Actor(String name, String address, String phoneNumber, String mail) {
+        this.name = name;
+        this.address = address;
+        this.phoneNumber = phoneNumber;
+        this.mail = mail;
+        this.pois = new ArrayList<>();
     }
 
     public String getName() {

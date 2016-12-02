@@ -10,7 +10,8 @@ import org.springframework.web.bind.annotation.RestController;
 /**
  * Created by walid on 02/12/2016.
  */
-@RestController (value = "/fixe")
+@RestController
+@RequestMapping (value = "fixe")
 public class FixeController {
 
     @Autowired

@@ -10,7 +10,8 @@ import org.springframework.web.bind.annotation.RestController;
 /**
  * Created by walid on 02/12/2016.
  */
-@RestController (value = "/service")
+@RestController
+@RequestMapping (value = "service")
 public class ServiceController {
 
     @Autowired

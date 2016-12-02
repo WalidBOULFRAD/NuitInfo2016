@@ -41,6 +41,19 @@ public abstract class POI {
     @OneToOne
     private Point location;
 
+    public POI() {
+
+    }
+
+    public POI(String name, String description, String address, Collection<Service> services, Actor owner, Point location) {
+        this.name = name;
+        this.description = description;
+        this.address = address;
+        this.services = services;
+        this.owner = owner;
+        this.location = location;
+    }
+
     public String getName() {
         return name;
     }
