@@ -11,6 +11,10 @@ import javax.persistence.Entity;
 @JsonTypeName("Individual")
 public class Individual extends Actor {
 
+    public Individual(){
+
+    }
+
     public Individual(String name, String address, String phoneNumber, String mail) {
         super(name, address, phoneNumber, mail);
     }

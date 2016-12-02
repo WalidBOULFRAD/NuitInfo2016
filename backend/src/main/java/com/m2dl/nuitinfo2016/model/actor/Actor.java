@@ -33,9 +33,11 @@ public abstract class Actor {
     @NotBlank
     private String address;
 
+    @NotNull
     private String phoneNumber;
 
     @Email
+    @NotNull
     private String mail;
 
     @OneToMany(mappedBy = "owner")
