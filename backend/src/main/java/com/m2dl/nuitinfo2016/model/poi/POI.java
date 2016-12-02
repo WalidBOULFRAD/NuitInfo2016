@@ -69,5 +69,12 @@ public abstract class POI {
         this.services = services;
     }
 
+    public Actor getOwner() {
+        return owner;
+    }
+
+    public void setOwner(Actor owner) {
+        this.owner = owner;
+    }
 }
 
