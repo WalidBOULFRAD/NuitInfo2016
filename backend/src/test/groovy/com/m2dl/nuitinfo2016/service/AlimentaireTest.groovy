@@ -1,4 +1,7 @@
-package com.m2dl.nuitinfo2016.model.service
+package groovy.com.m2dl.nuitinfo2016.service
+
+import com.m2dl.nuitinfo2016.model.service.Alimentaire
+
 /**
  * Created by Moghite on 01/12/2016.
  */

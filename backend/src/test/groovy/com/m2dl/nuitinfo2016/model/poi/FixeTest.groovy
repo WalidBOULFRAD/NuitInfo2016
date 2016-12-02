@@ -1,5 +1,6 @@
 package groovy.com.m2dl.nuitinfo2016.model.poi
 
+import com.m2dl.nuitinfo2016.model.actor.Actor
 import com.m2dl.nuitinfo2016.model.poi.Fixe
 import spock.lang.Specification
 import spock.lang.Unroll
@@ -21,43 +22,44 @@ class FixeTest extends Specification {
     }
 
     @Unroll
-    void "test la validite d'un poi fixe"(String unName, String uneDescription,
-                                            String uneAddress, Date uneDate) {
+    void "test la validite d'un poi fixe"(String unName, String uneDescription, String uneAddress,
+                                          Actor unOwner, Date uneDate) {
 
         given: "un individual initialise correctement"
         Fixe fixe = new Fixe(name: unName, description: uneDescription, address: uneAddress,
-                startDate: uneDate)
+                owner: unOwner, startDate: uneDate)
 
         expect: "l'individual est valide"
         validator.validate(fixe).empty
 
         where:
-        unName     | uneDescription   | uneAddress | uneDate
-        "un nom 1" | "uneDescription" | "uneaddress"  | new Date()
+        unName     | uneDescription   | uneAddress   | unOwner     | uneDate
+        "un nom 1" | "uneDescription" | "uneaddress" | Mock(Actor) | new Date()
     }
 
     @Unroll
-    void "test l'invalidite d'un poi fixe non valide"(String unName, String uneDescription,
-                                                        String uneAddress, Date uneDate) {
+    void "test l'invalidite d'un poi fixe non valide"(String unName, String uneDescription, String uneAddress,
+                                                      Actor unOwner, Date uneDate) {
 
         given: "un poi fixe initialise de maniere non valide"
         Fixe fixe = new Fixe(name: unName, description: uneDescription, address: uneAddress,
-                startDate: uneDate)
+                owner: unOwner, startDate: uneDate)
 
         expect: "le poi fixe est invalide"
         !validator.validate(fixe).empty
 
         where:
-        unName | uneDescription   | uneAddress   | uneDate
-        null   | null             | null         | null
-        null   | null             | null         | new Date()
-        null   | null             | "uneaddress" | new Date()
-        null   | "uneDescription" | "uneaddress" | new Date()
-
-        ""     | ""               | ""           | null
-        ""     | ""               | ""           | new Date()
-        ""     | ""               | "uneaddress" | new Date()
-        ""     | "uneDescription" | "uneaddress" | new Date()
+        unName | uneDescription   | uneAddress   | unOwner     | uneDate
+        null   | null             | null         | null        | null
+        null   | null             | null         | null        | new Date()
+        null   | null             | null         | Mock(Actor) | new Date()
+        null   | null             | "uneaddress" | Mock(Actor) | new Date()
+        null   | "uneDescription" | "uneaddress" | Mock(Actor) | new Date()
+        ""     | ""               | ""           | null        | null
+        ""     | ""               | ""           | null        | new Date()
+        ""     | ""               | ""           | Mock(Actor) | new Date()
+        ""     | ""               | "uneaddress" | Mock(Actor) | new Date()
+        ""     | "uneDescription" | "uneaddress" | Mock(Actor) | new Date()
     }
 
 }
